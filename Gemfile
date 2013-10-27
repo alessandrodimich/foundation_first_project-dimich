@@ -45,6 +45,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
 end
 
+group :test do
+  gem 'selenium-webdriver', '2.37.0'
+  gem 'capybara', '2.1.0'
+end
+
 # Use ActiveModel has_secure_password
   gem 'bcrypt-ruby', '~> 3.0.0'
 
