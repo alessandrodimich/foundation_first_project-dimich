@@ -43,6 +43,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
+  gem 'guard-rspec'
 end
 
 group :test do
