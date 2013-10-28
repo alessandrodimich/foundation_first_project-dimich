@@ -9,6 +9,10 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
+
+
+#As per the Rails Tutorial Book we generate a new secret token not to be displayed in Github
+
 require 'securerandom'
 
 def secure_token
