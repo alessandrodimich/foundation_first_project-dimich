@@ -16,7 +16,7 @@
 /tmp
 
 # Ignore other unneeded files.
-database.yml
+#database.yml verify whether it is the case or not to put in gitignore
 doc/
 *.swp
 *~
