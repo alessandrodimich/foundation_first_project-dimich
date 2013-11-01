@@ -25,4 +25,8 @@ class StaticPagesController < ApplicationController
 
   def test_page
   end
+
+  def carousel
+
+  end
 end
