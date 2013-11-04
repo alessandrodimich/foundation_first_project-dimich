@@ -28,4 +28,8 @@ class StaticPagesController < ApplicationController
 
   def carousel
   end
+
+  def jumbotron
+
+  end
 end

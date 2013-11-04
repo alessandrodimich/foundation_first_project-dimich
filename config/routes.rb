@@ -12,6 +12,8 @@ FirstProject::Application.routes.draw do
   get "static_pages/start"
   get "static_pages/test_page"
   get "static_pages/carousel"
+  get "static_pages/jumbotron"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
