@@ -26,10 +26,11 @@ class StaticPagesController < ApplicationController
   def test_page
   end
 
-  def carousel
-  end
-
   def jumbotron
-
+    @title = "Jumbotron"
   end
+
+  def theme
+  end
+
 end

@@ -1,18 +1,19 @@
 FirstProject::Application.routes.draw do
 
-  root 'static_pages#welcome'
+  root 'static_pages#jumbotron'
 
+  get "static_pages/welcome"
   get "static_pages/home"
   get "static_pages/index"
   get "static_pages/help"
   get "static_pages/about"
   get "static_pages/map"
   get "static_pages/contact"
-  #get "static_pages/welcome" DEFINED AS ROOT
   get "static_pages/start"
   get "static_pages/test_page"
-  get "static_pages/carousel"
-  get "static_pages/jumbotron"
+  get "static_pages/jumbotron" #DEFINED AS ROOT
+  get "static_pages/theme"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
