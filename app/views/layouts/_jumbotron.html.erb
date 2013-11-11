@@ -1,0 +1,11 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1>Hello, world!</h1>
+      <% if current_user %>
+        <p>Welcome, <%= full_name(current_user) %></p>
+      <% else %>
+        <p><%= link_to "Sign up now!", signup_path, class: "btn btn-primary btn-lg"  %></p>
+      <% end %>
+  </div>
+</div>

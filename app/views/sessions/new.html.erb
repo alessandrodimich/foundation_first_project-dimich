@@ -1,0 +1,14 @@
+<% provide(:title, @title) %>
+
+<div class="container">
+
+  <div class="form-signin">
+    <h2 class="form-signin-heading">Log In</h2>
+    <%= form_tag sessions_path do %>
+    <%= email_field_tag :email, params[:email], :placeholder => "Email", :class => "form-control" %>
+    <%= password_field_tag :password, params[:password], :placeholder => "Password", :class => "form-control" %>
+    <%= submit_tag "Log in", class: "btn btn-lg btn-primary btn-block" %>
+    <% end %>
+  </div>
+
+</div> <!-- /container -->

@@ -1,8 +1,17 @@
 FirstProject::Application.routes.draw do
 
-  root 'static_pages#jumbotron'
+  root 'static_pages#welcome'
 
-  get "static_pages/welcome"
+
+
+  get 'signup', to: 'users#new', as: 'signup', via: 'get'
+  get 'login', to: 'sessions#new', as: 'login', via: 'get'
+  get 'logout', to: 'sessions#destroy', as: 'logout', via: 'delete'
+
+
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+
   get "static_pages/home"
   get "static_pages/index"
   get "static_pages/help"
@@ -11,8 +20,9 @@ FirstProject::Application.routes.draw do
   get "static_pages/contact"
   get "static_pages/start"
   get "static_pages/test_page"
-  get "static_pages/jumbotron" #DEFINED AS ROOT
   get "static_pages/theme"
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

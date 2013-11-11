@@ -8,8 +8,11 @@
 
 
   <!-- Latest compiled and minified CSS -->
-  <%= stylesheet_link_tag "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", "data-turbolinks-track" => true %>
+
+  <!-- Using the optional Bootstrap theme from CDN -->
+  <%= stylesheet_link_tag "http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 
   <!-- Prevent cross site request forgery -->
   <%= csrf_meta_tags %>
+
