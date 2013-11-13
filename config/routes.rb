@@ -4,9 +4,9 @@ FirstProject::Application.routes.draw do
 
 
 
-  get 'signup', to: 'users#new', as: 'signup', via: 'get'
-  get 'login', to: 'sessions#new', as: 'login', via: 'get'
-  get 'logout', to: 'sessions#destroy', as: 'logout', via: 'delete'
+  match 'signup', to: 'users#new', as: 'signup', via: 'get'
+  match 'login', to: 'sessions#new', as: 'login', via: 'get'
+  match 'logout', to: 'sessions#destroy', as: 'logout', via: 'get'
 
 
   resources :users

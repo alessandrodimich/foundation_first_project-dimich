@@ -9,10 +9,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.password_confirmation = @user.password #Workaround password confirmation validation
+
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to root_url, notice: "Thank you for signing up!"
+      login_user(@user)
+      flash[:success] = "Thank you for signing up!"
+      redirect_to root_url
     else
       render "new"
     end

@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
 private
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by(auth_token: session[:auth_token]) if session[:auth_token]
   end
-  helper_method :current_user
+  helper_method :current_user #To make the method also available in the views
 
   def authorize
     if current_user.nil?
@@ -16,4 +16,13 @@ private
       redirect_to login_url
     end
   end
+
+  def login_user(user)
+    session[:auth_token] = user.auth_token
+  end
+
+  def logout_user
+    session[:auth_token] = nil
+  end
+
 end
