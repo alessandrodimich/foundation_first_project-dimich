@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 private
 
   def current_user
-    @current_user ||= User.find_by(auth_token: session[:auth_token]) if session[:auth_token]
+    @current_user ||= User.find_by(auth_token: cookies[:auth_token]) if cookies[:auth_token]
   end
   helper_method :current_user #To make the method also available in the views
 
@@ -17,12 +17,20 @@ private
     end
   end
 
-  def login_user(user)
-    session[:auth_token] = user.auth_token
+  def login_user(user, remember_me)
+
+    user.generate_auth_token
+    if remember_me
+      cookies.permanent[:auth_token] = user.auth_token
+      cookies.permanent[:star_token] = user.star_token
+    else
+      cookies[:auth_token] = user.auth_token
+      cookies.permanent[:star_token] = user.star_token
+    end
   end
 
   def logout_user
-    session[:auth_token] = nil
+    cookies.delete(:auth_token)
   end
 
 end

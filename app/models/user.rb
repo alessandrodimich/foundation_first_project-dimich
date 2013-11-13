@@ -15,14 +15,23 @@ class User < ActiveRecord::Base
   validates_length_of :user_name, :first_name, :last_name, minimum: 2, message: "must be at least 2 characters long"
 
   before_validation :set_password_confirmation
-  before_create :generate_token
+  before_create :generate_star_token
 
-  def generate_token
+  #Session token
+  def generate_auth_token
     self.auth_token = Digest::SHA1.hexdigest(Time.now.to_f.to_s.sub(".", "") + self.email.to_s)
+    self.update_attribute(:auth_token, self.auth_token)
   end
+
+private
 
   def set_password_confirmation
     self.password_confirmation = self.password
+  end
+
+  #Permanent Token ID
+  def generate_star_token
+    self.star_token = Digest::SHA1.hexdigest(Time.now.to_f.to_s.sub(".", "") + self.email.to_s + self.user_name.to_s)
   end
 
 end

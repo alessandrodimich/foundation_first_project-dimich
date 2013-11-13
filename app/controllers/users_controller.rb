@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      login_user(@user)
+      login_user(@user, "remember_me_yes")
       flash[:success] = "Thank you for signing up!"
       redirect_to root_url
     else
