@@ -33,4 +33,13 @@ private
     cookies.delete(:auth_token)
   end
 
+  private
+
+  def verify_if_signed_in
+    if current_user
+      flash[:info] = "You are currently signed in"
+      redirect_to root_url #or to the profile page
+    end
+  end
+
 end

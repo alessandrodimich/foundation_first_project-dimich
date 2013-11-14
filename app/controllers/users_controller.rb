@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_filter :verify_if_signed_in, only: [:new, :create]
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def new

@@ -1,11 +1,9 @@
 class PasswordResetsController < ApplicationController
+
+  before_filter :verify_if_signed_in
+
   def new
-    unless current_user
-      @title = "Reset Password"
-    else
-      flash[:info] = "Please change your password from the settings page"
-      redirect_to root_url #or to the profile page
-    end
+    @title = "Reset Password"
   end
 
   def create
@@ -41,4 +39,14 @@ class PasswordResetsController < ApplicationController
       render "edit"
     end
   end
+
+private
+
+  def verify_if_signed_in
+    if current_user
+      flash[:info] = "Please change your password from the settings page"
+      redirect_to root_url #or to the profile page
+    end
+  end
+
 end

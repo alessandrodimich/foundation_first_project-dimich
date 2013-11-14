@@ -1,11 +1,9 @@
 class SessionsController < ApplicationController
+
+  before_filter :verify_if_signed_in
+
   def new
-    unless current_user
-      @title = "Sign in"
-    else
-      flash[:info] = "You are already signed in"
-      redirect_to root_url
-    end
+    @title = "Sign in"
   end
 
   def create
@@ -26,4 +24,6 @@ class SessionsController < ApplicationController
     flash[:info] = "Logged out!"
     redirect_to root_url
   end
+
+
 end
