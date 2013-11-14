@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
   def new
-    @title = "Sign in"
+    unless current_user
+      @title = "Sign in"
+    else
+      flash[:info] = "You are already signed in"
+      redirect_to root_url
+    end
   end
 
   def create

@@ -2,8 +2,8 @@ FirstProject::Application.routes.draw do
 
   root 'static_pages#welcome'
 
-
-
+  #match 'browser extension' to 'controller#action' as routing_path
+  match 'reset-password', to: 'password_resets#new', as: 'reset_password', via: 'get'
   match 'signup', to: 'users#new', as: 'signup', via: 'get'
   match 'login', to: 'sessions#new', as: 'login', via: 'get'
   match 'logout', to: 'sessions#destroy', as: 'logout', via: 'get'
@@ -11,6 +11,7 @@ FirstProject::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :password_resets
 
   get "static_pages/home"
   get "static_pages/index"

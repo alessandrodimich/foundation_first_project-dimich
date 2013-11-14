@@ -23,6 +23,14 @@ class User < ActiveRecord::Base
     self.update_attribute(:auth_token, self.auth_token)
   end
 
+  def send_password_reset
+      self.password_reset_token = Digest::SHA1.hexdigest(Time.now.to_f.to_s.sub(".", "") + self.email.to_s)
+      self.password_reset_sent_at = Time.now
+      self.update_columns(:password_reset_token => self.password_reset_token, :password_reset_sent_at => self.password_reset_sent_at )
+      UserMailer.reset_password(self).deliver
+  end
+
+
 private
 
   def set_password_confirmation
