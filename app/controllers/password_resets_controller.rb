@@ -1,6 +1,6 @@
 class PasswordResetsController < ApplicationController
 
-  before_filter :verify_if_signed_in
+  before_filter :verify_if_signed_in, only: [ :edit, :create ]
 
   def new
     @title = "Reset Password"
@@ -27,6 +27,7 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by! password_reset_token: params[:id]
     if @user
       @user.password = params[:user][:password]
+      @user.password_confirmation = params[:user][:password_confirmation]
     end
     if @user.password_reset_sent_at < 2.hours.ago
       flash[:warning] = "Password reset has expired, please re-submit your email"
@@ -44,7 +45,7 @@ private
 
   def verify_if_signed_in
     if current_user
-      flash[:info] = "Please change your password from the settings page"
+      flash[:info] = "You are already logged in, Please change your password from the settings page"
       redirect_to root_url #or to the profile page
     end
   end
