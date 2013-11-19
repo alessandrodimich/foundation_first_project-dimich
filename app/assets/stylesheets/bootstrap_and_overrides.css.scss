@@ -10,6 +10,14 @@ body {
   margin-bottom: 20px;
 }
 
+.navbar-centered {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: auto;
+}
+
 
 /* Style for the Theme page */
 
@@ -69,7 +77,16 @@ body {
   border-radius: 0px;
 }
 
+.btn {
+  border-radius: 0px;
+}
+
 .btn-primary {
+  border-radius: 0px;
+  border-width: 0px;
+}
+
+.btn-danger {
   border-radius: 0px;
   border-width: 0px;
 }
