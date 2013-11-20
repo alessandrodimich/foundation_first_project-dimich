@@ -91,4 +91,26 @@ body {
   border-width: 0px;
 }
 
+// label error and success settings from singnin form
+
+/* New styles below */
+
+label.valid {
+  width: 24px;
+  height: 24px;
+  background: url(assets/images/valid.png) center center no-repeat;
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+label.error {
+  color: #FF0000;
+  font-weight: bold;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+}
+
 //End of Signup form CSS
