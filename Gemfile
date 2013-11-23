@@ -16,7 +16,7 @@ end
 
 
 # Use simple form
-gem 'simple_form'
+#gem 'simple_form'
 
 
 # Use SCSS for stylesheets
@@ -47,6 +47,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
+  gem 'guard-livereload', '2.0.0'
   gem 'guard-rspec', '4.0.3'
   gem 'spork-rails', '4.0.0'
   gem 'guard-spork', '1.5.1'
@@ -56,6 +57,7 @@ end
 group :test do
   gem 'selenium-webdriver', '2.37.0'
   gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails', '4.3.0'
 end
 
 # Use ActiveModel has_secure_password
