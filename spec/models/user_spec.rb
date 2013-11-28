@@ -8,4 +8,13 @@ describe User do
   pending "User Email should be in lower case"
 end
 
+describe User do
+  it "should have a 'name' attribute" do
+    user = User.new
+    user.should respond_to(:first_name)
+    user.should respond_to(:last_name)
+  end
+end
+
+
 
