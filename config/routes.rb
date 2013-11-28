@@ -1,5 +1,7 @@
 FirstProject::Application.routes.draw do
 
+  resources :events
+
   root 'static_pages#welcome'
 
   #match 'browser extension' to 'controller#action' as routing_path
