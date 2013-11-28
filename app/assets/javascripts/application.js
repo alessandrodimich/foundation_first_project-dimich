@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.validate
+//= require additional-methods
+//= require my_coffeescript_code
+//= require my_javascript_code
 //= require_tree .
 
 // $ -> per effettuare il fadein dei flash notice
