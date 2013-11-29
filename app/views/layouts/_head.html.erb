@@ -11,36 +11,16 @@
 
   <!-- Using the optional Bootstrap theme from CDN -->
   <%= stylesheet_link_tag "http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application" , media: "all", "data-turbolinks-track" => true %>
 
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag"//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js", "data-turbolinks-track" => true %>
 
-<script type="text/javascript">
-     window.onload = function() {
-       results = document.getElementById("results");
-       // If geolocation is available, try to get the visitor's position.
-       if (navigator.geolocation) {
-         navigator.geolocation.getCurrentPosition(
-           geolocationSuccess, geolocationFailure
-);
-         results.innerHTML = "The search has begun.";
-         // alert(results.innerHTML)
-       }
-       else {
-         results.innerHTML = "This browser doesn't support geolocation.";
-         results.innerHTML
-} };
-     function geolocationSuccess(position) {
-       results.innerHTML = "You were last spotted at (" +
-        position.coords.latitude + "," + position.coords.longitude + ")";
-        // alert(results.innerHTML)
 
-     }
-     function geolocationFailure(positionError) {
-       results.innerHTML = "Geolocation failed.";
-       // alert(results.innerHTML)
-}</script>
+
+
   <!-- Prevent cross site request forgery -->
   <%= csrf_meta_tags %>
+
+
 

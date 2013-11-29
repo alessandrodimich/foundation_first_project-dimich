@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
 
+
   before_filter :authorize, except: [:welcome]
 
   def home
