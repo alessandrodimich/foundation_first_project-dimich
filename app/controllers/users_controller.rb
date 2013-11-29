@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   layout 'basic', only: :new
 
-  before_filter :verify_if_signed_in, only: [:new, :create]
+  before_action :verify_if_signed_in, only: [:new, :create]
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 

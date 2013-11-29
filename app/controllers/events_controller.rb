@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :verify_if_not_signed_in, only: [:index, :new, :create , :show]
+  before_action :authorized_user, only: [:edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -25,6 +27,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
 
     respond_to do |format|
       if @event.save
@@ -69,6 +72,14 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :description, :user_id)
+      params.require(:event).permit(:title, :description)
+    end
+private
+    def authorized_user
+      unless current_user && current_user.id == @event.user_id
+        flash[:warning] = "you are not authorized!!"
+        redirect_to events_path
+      end
+
     end
 end

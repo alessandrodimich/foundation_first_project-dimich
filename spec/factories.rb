@@ -1,4 +1,5 @@
 FactoryGirl.define do
+
   factory :user do
     first_name     "Alessandro"
     last_name "Dimich"
@@ -7,5 +8,11 @@ FactoryGirl.define do
     password "foobar"
     password_confirmation "foobar"
   end
+
+  factory :event do
+    name "Test Event"
+    user
+  end
+
 end
 

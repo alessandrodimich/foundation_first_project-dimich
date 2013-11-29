@@ -1,6 +1,8 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
 
+  has_many :events
+
   has_secure_password
 
   validates_presence_of :user_name, :first_name, :last_name

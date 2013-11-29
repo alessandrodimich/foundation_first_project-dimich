@@ -33,7 +33,6 @@ private
     cookies.delete(:auth_token)
   end
 
-  private
 
   def verify_if_signed_in
     if current_user
@@ -41,5 +40,13 @@ private
       redirect_to root_url #or to the profile page
     end
   end
+
+    def verify_if_not_signed_in
+    unless current_user
+      flash[:warning] = "you need to be signed in !!"
+      redirect_to root_url #or to the profile page
+    end
+  end
+
 
 end
