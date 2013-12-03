@@ -9,6 +9,9 @@ gem 'rails', '4.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '0.17.0'
 
+# Use Foundation 5
+gem 'foundation-rails', '5.0.2.0'
+
 group :production do
   # Include Rails12Factor for Heroku
   gem 'rails_12factor', '0.0.2'

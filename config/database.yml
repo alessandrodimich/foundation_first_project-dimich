@@ -18,7 +18,7 @@ development:
   adapter: postgresql
   host: localhost
   encoding: unicode
-  database: first_project_development
+  database: foundation_first_project_development
   pool: 5
   username: postgres
   password: dimich
@@ -48,7 +48,7 @@ test:
   adapter: postgresql
   host: localhost
   encoding: unicode
-  database: first_project_test
+  database: foundation_first_project_test
   pool: 5
   username: postgres
   password: dimich
@@ -57,7 +57,7 @@ production:
   adapter: postgresql
   host: localhost
   encoding: unicode
-  database: first_project_production
+  database: foundation_first_project_production
   pool: 5
   username: postgres
   password: dimich

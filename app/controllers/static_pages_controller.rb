@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
 
-  before_filter :authorize, except: [:welcome]
+  before_filter :authorize, except: [:welcome, :index]
 
   def home
   end

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-  layout 'basic', only: :new
 
   before_action :verify_if_signed_in, only: [:new, :create]
 

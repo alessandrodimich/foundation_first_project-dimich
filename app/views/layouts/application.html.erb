@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="TheUnderPilot">
+    <%= favicon_link_tag 'favicon.ico' %>
 
-  <%= render 'layouts/head' %>
-  <%= render 'layouts/shim' %>
+    <title><%= full_title(@title) %></title>
 
-</head>
-<body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
 
+    <%= render 'layouts/shim' %>
 
-  <%= render 'layouts/navbar' %>
+    <% if Rails.env.development? %>
+        <%= render 'shared/livereload' %>
+    <% end %>
 
-  <p></p>
+  </head>
 
-  <%= render 'layouts/messages' %>
+  <body>
 
-  <%= yield %>
+    <%= render 'layouts/topbar' %>
 
-  <% if Rails.env.development? %>
-    <%= render 'layouts/debug_footer' %>
-  <% end %>
-
-</body>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

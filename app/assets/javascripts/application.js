@@ -12,15 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.validate
-//= require additional-methods
+//= require foundation
 //= require_tree .
 
 // $ -> per effettuare il fadein dei flash notice
 //   $(".notice, .error").on("click", (event)->
 //     $(event.target).hide("slow")
 //   )
-
-
-
-
+$(function(){ $(document).foundation(); });

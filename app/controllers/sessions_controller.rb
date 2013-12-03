@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
 
-  layout 'basic'
 
   before_filter :verify_if_signed_in, except: :destroy
 

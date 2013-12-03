@@ -10,6 +10,10 @@ FirstProject::Application.routes.draw do
   match 'login', to: 'sessions#new', as: 'login', via: 'get'
   match 'logout', to: 'sessions#destroy', as: 'logout', via: 'get'
 
+  match 'index', to: 'static_pages#index', as: 'index', via: 'get'
+
+
+
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
