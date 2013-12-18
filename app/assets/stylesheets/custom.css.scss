@@ -24,7 +24,22 @@ $blue-hero-color: #074E68;
 
 //top-bar custom modifications
 .top-bar {
-    padding-right: 30px;
-    padding-left: 30px;
+    .title-area, .has-form {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+//form width
+
+.form-width {
+    max-width: 300px;
+    min-width: 220px;
+}
+
+// Setting columns border for development purpouses
+
+.columns {
+    border: 1px solid green;
 }
 

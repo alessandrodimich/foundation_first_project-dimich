@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <title><%= full_title(yield(:title)) %></title>
+
+    <title><%= full_title(@title) %></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="TheUnderPilot">
     <%= favicon_link_tag 'favicon.ico' %>
-
-    <title><%= full_title(@title) %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -24,7 +24,9 @@
 
   <body>
 
-    <%= render 'layouts/topbar' %>
+    <%= render 'layouts/navigation' %>
+
+    <%= render 'layouts/messages' %>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

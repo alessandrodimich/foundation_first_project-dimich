@@ -12,7 +12,7 @@ private
 
   def authorize
     if current_user.nil?
-      flash[:danger] = "Not authorized, please login first"
+      flash[:warning] = "Not authorized, please login first"
       redirect_to login_url
     end
   end

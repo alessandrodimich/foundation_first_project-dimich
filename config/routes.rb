@@ -11,7 +11,7 @@ FirstProject::Application.routes.draw do
   match 'logout', to: 'sessions#destroy', as: 'logout', via: 'get'
 
   match 'index', to: 'static_pages#index', as: 'index', via: 'get'
-
+  match 'about', to: 'static_pages#about', as: 'about', via: 'get'
 
 
 

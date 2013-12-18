@@ -1,31 +1,50 @@
-<% provide(:title, @title) %>
+<% @title = "Sign in" %>
 
-<div class="container">
+<h2 class="text-center">Log In</h2>
 
-    <%= form_tag sessions_path, class: "form-signin", id: "signin-form", role: "form" do %>
+<%= form_tag sessions_path role: "form" do %>
 
-    <h2 class="form-signin-heading">Log In</h2>
 
-    <div class="form-group">
-      <label class="control-label" for="email">Email Address</label>
-      <%= email_field_tag :email, params[:email],:label => "EMAIL" ,:placeholder => "Email", :class => "form-control", :id => "email" %>
+<div class="row">
+  <div class="small-12 columns small-centered form-width">
+      <label for="email" class="text-center">Email Address</label>
+      <%= email_field_tag :email, params[:email],:label => "EMAIL" ,:placeholder => "Email", :id => "email" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns small-centered form-width">
+    <label for="password" class="text-center">Password</label>
+    <%= password_field_tag :password, params[:password], :placeholder => "Password", :id => "password" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 small-centered columns text-center form-width">
+    <%= submit_tag "Log in", class: "button" %>
+  </div>
+
+</div>
+
+
+  <div class="row">
+    <div class="small-12 columns small-centered form-width text-center">
+      <%= check_box_tag :remember_me, params[:remember_me], :checked => true   %><label for="checkbox1">Remember me</label>
     </div>
+  </div>
 
-    <div class="form-group">
-    <label class="control-label" for="password">Password</label>
-      <%= password_field_tag :password, params[:password], :placeholder => "Password", :class => "form-control", :id => "password" %>
-      <%= submit_tag "Log in", class: "btn btn-lg btn-primary btn-block" %>
+  <% end %>
+
+<br><br>
+
+    <div class="row">
+    <div class="small-12 columns small-centered">
+<p class="small text-center">Forgotten password? <%= link_to "click here to reset it!", reset_password_path %></p>
     </div>
+  </div>
 
-    <p></p>
-    <p>
-      <div class="checkbox">
-        <label>Remember me</label>
-      <%= check_box_tag :remember_me, params[:remember_me], :checked => true   %>
-      </div>
-      <p>Forgotten password? <%= link_to "click here to reset it!", reset_password_path %></p>
-      <% end %>
-    </p>
 
-</div> <!-- /container -->
+
+
+
 

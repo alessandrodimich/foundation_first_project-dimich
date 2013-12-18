@@ -1,10 +1,10 @@
     <!-- Navigation -->
 
   <nav class="top-bar" data-topbar>
-    <ul class="title-area">
+    <ul class="title-area ">
       <!-- Title Area -->
       <li class="name">
-        <h1>
+        <h1 >
           <%= link_to APP_NAME, root_path  %>
           </a>
         </h1>
@@ -16,22 +16,12 @@
 
 
       <!-- Left Nav Section -->
-      <ul class="left">
-        <li class="divider"></li>
-        <li><a href="#">About Us</a></li>
-        <li class="divider"></li>
-        <li><a href="#">FAQ</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Contact</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Help</a></li>
-        <li class="divider"></li>
-      </ul>
-
-      <!-- Right Nav Section -->
       <ul class="right">
-        <li class="divider"></li>
-        <li class="has-dropdown">
+         <li><a href="#">About Us</a></li>
+         <li><a href="#">FAQ</a></li>
+         <li><a href="#">Contact</a></li>
+
+         <li class="has-dropdown">
           <a href="#">Events</a>
           <ul class="dropdown">
             <li><label>SHowing Today</label></li>
@@ -47,28 +37,14 @@
             </li>
             <li><a href="#">Dropdown Option</a></li>
             <li><a href="#">Dropdown Option</a></li>
-            <li class="divider"></li>
             <li><label>Create an Event</label></li>
             <li><a href="#">Become an Eventer</a></li>
             <li><a href="#">Dropdown Option</a></li>
-            <li class="divider"></li>
             <li><a href="#">See all →</a></li>
           </ul>
         </li>
-        <li class="divider"></li>
 
-        <li class="has-dropdown">
-          <a href="#">Languages</a>
-          <ul class="dropdown">
-            <li><a href="#">Italian</a></li>
-            <li><a href="#">English</a></li>
-            <li><a href="#">Deutsch</a></li>
-            <li class="divider"></li>
-            <li><a href="#">See all →</a></li>
-          </ul>
-        </li>
-        <li class="divider"></li>
-        <li class="has-form">
+         <li class="has-form">
           <%= link_to "Sign in", login_path, class: "small button"  %>
         </li>
       </ul>

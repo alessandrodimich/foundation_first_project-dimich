@@ -1,0 +1,13 @@
+<% if @current_model.errors.any? %>
+<div data-alert class="alert-box warning">
+  <h2 class="text-center">Form is invalid: found <%= @current_model.errors.count %> <%= pluralizer(@current_model.errors.count, "error") %></h2>
+    <ul>
+      <% @current_model.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  <a href="#" class="close">&times;</a>
+</div>
+<% end %>
+
+

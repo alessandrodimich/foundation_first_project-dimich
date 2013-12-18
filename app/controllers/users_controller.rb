@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   def new
 
     @user = User.new
-    @title = "Sign up"
   end
 
   def create
@@ -20,7 +19,7 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
 
-      render "new", layout: 'basic'
+      render 'new'
     end
   end
 

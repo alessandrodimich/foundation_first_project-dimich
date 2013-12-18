@@ -4,21 +4,27 @@ class PasswordResetsController < ApplicationController
   before_filter :verify_if_signed_in, only: [ :edit, :create ]
 
   def new
-    @title = "Reset Password"
+
   end
 
   def create
     user = User.find_by(email: params[:email])
-    user.send_password_reset if user
-    flash[:info] = "An email has been sent to your account with password reset instructions"
-    redirect_to root_url
+    if user
+      user.send_password_reset
+      flash[:info] = "An email has been sent to your account with password reset instructions"
+      redirect_to root_url
+    else
+      flash[:warning] = "Sorry could not find user with email #{params[:email]}"
+      render 'new'
+    end
   end
 
   def edit
+
     begin
       @user = User.find_by! password_reset_token: user_params
     rescue
-      flash[:warning] = "Sorry, something went wrong!"
+      flash[:warning] = "Sorry, something went wrong, could be that your request has expired"
       redirect_to root_url
     end
   end
